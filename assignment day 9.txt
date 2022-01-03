@@ -1,0 +1,1038 @@
+1).  Solving problems using array functions on rest countries data.
+
+
+(a).  Get all the countries from Asia continent /region using Filter function
+
+
+var xhr=new XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.onload=function(){
+      if (xhr.status>=200 && xhr.status<300){
+            let data=JSON.parse(this.response)
+            for (let i of data.filter(Asiacountries=>Asiacountries.region=="Asia")){
+                  let user=i
+                  console.log(user.name)
+            }
+      }
+}
+xhr.send();
+
+
+output
+kiran.js:27 Afghanistan
+kiran.js:27 Armenia
+kiran.js:27 Azerbaijan
+kiran.js:27 Bahrain
+kiran.js:27 Bangladesh
+kiran.js:27 Bhutan
+kiran.js:27 Brunei Darussalam
+kiran.js:27 Cambodia
+kiran.js:27 China
+kiran.js:27 Georgia
+kiran.js:27 Hong Kong
+kiran.js:27 India
+kiran.js:27 Indonesia
+kiran.js:27 Iran (Islamic Republic of)
+kiran.js:27 Iraq
+kiran.js:27 Israel
+kiran.js:27 Japan
+kiran.js:27 Jordan
+kiran.js:27 Kazakhstan
+kiran.js:27 Kuwait
+kiran.js:27 Kyrgyzstan
+kiran.js:27 Lao People's Democratic Republic
+kiran.js:27 Lebanon
+kiran.js:27 Macao
+kiran.js:27 Malaysia
+kiran.js:27 Maldives
+kiran.js:27 Mongolia
+kiran.js:27 Myanmar
+kiran.js:27 Nepal
+kiran.js:27 Korea (Democratic People's Republic of)
+kiran.js:27 Oman
+kiran.js:27 Pakistan
+kiran.js:27 Palestine, State of
+kiran.js:27 Philippines
+kiran.js:27 Qatar
+kiran.js:27 Saudi Arabia
+kiran.js:27 Singapore
+kiran.js:27 Korea (Republic of)
+kiran.js:27 Sri Lanka
+kiran.js:27 Syrian Arab Republic
+kiran.js:27 Taiwan
+kiran.js:27 Tajikistan
+kiran.js:27 Thailand
+kiran.js:27 Timor-Leste
+kiran.js:27 Turkey
+kiran.js:27 Turkmenistan
+kiran.js:27 United Arab Emirates
+kiran.js:27 Uzbekistan
+kiran.js:27 Viet Nam
+kiran.js:27 Yemen
+
+
+
+(b).  Get all the countries with a population of less than 2 lakhs using Filter function
+
+
+var xhr=new XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.onload=function(){
+      if (xhr.status>=200 && xhr.status<300){
+            let data=JSON.parse(this.response)
+            for (let i of data.filter(countries=>countries.population<200000)){
+                  let user=i
+                  console.log(user.name)
+            }
+      }
+}
+xhr.send();
+
+
+output
+kiran.js:27 Åland Islands
+kiran.js:27 American Samoa
+kiran.js:27 Andorra
+kiran.js:27 Anguilla
+kiran.js:27 Antarctica
+kiran.js:27 Antigua and Barbuda
+kiran.js:27 Aruba
+kiran.js:27 Bermuda
+kiran.js:27 Bonaire, Sint Eustatius and Saba
+kiran.js:27 Bouvet Island
+kiran.js:27 British Indian Ocean Territory
+kiran.js:27 United States Minor Outlying Islands
+kiran.js:27 Virgin Islands (British)
+kiran.js:27 Virgin Islands (U.S.)
+kiran.js:27 Cayman Islands
+kiran.js:27 Christmas Island
+kiran.js:27 Cocos (Keeling) Islands
+kiran.js:27 Cook Islands
+kiran.js:27 Curaçao
+kiran.js:27 Dominica
+kiran.js:27 Falkland Islands (Malvinas)
+kiran.js:27 Faroe Islands
+kiran.js:27 French Southern Territories
+kiran.js:27 Gibraltar
+kiran.js:27 Greenland
+kiran.js:27 Grenada
+kiran.js:27 Guam
+kiran.js:27 Guernsey
+kiran.js:27 Heard Island and McDonald Islands
+kiran.js:27 Holy See
+kiran.js:27 Isle of Man
+kiran.js:27 Jersey
+kiran.js:27 Kiribati
+kiran.js:27 Liechtenstein
+kiran.js:27 Marshall Islands
+kiran.js:27 Micronesia (Federated States of)
+kiran.js:27 Monaco
+kiran.js:27 Montserrat
+kiran.js:27 Nauru
+kiran.js:27 Niue
+kiran.js:27 Norfolk Island
+kiran.js:27 Northern Mariana Islands
+kiran.js:27 Palau
+kiran.js:27 Pitcairn
+kiran.js:27 Saint Barthélemy
+kiran.js:27 Saint Helena, Ascension and Tristan da Cunha
+kiran.js:27 Saint Kitts and Nevis
+kiran.js:27 Saint Lucia
+kiran.js:27 Saint Martin (French part)
+kiran.js:27 Saint Pierre and Miquelon
+kiran.js:27 Saint Vincent and the Grenadines
+kiran.js:27 Samoa
+kiran.js:27 San Marino
+kiran.js:27 Sao Tome and Principe
+kiran.js:27 Seychelles
+kiran.js:27 Sint Maarten (Dutch part)
+kiran.js:27 South Georgia and the South Sandwich Islands
+kiran.js:27 Svalbard and Jan Mayen
+kiran.js:27 Tokelau
+kiran.js:27 Tonga
+kiran.js:27 Turks and Caicos Islands
+kiran.js:27 Tuvalu
+kiran.js:27 Wallis and Futuna
+
+
+(c).  Print the following details name, capital, flag using forEach function
+
+
+(1).  Name of the country
+
+var xhr=new XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.onload=function(){
+      if (xhr.status>=200 && xhr.status<300){
+            let data=JSON.parse(this.response)
+            data.forEach(element => {
+                console.log(element.name)
+                
+            });
+      }
+}
+xhr.send();
+
+
+
+output
+kiran.js:26 Afghanistan
+kiran.js:26 Åland Islands
+kiran.js:26 Albania
+kiran.js:26 Algeria
+kiran.js:26 American Samoa
+kiran.js:26 Andorra
+kiran.js:26 Angola
+kiran.js:26 Anguilla
+kiran.js:26 Antarctica
+kiran.js:26 Antigua and Barbuda
+kiran.js:26 Argentina
+kiran.js:26 Armenia
+kiran.js:26 Aruba
+kiran.js:26 Australia
+kiran.js:26 Austria
+kiran.js:26 Azerbaijan
+kiran.js:26 Bahamas
+​ Bahrain
+​ Bangladesh
+​ Barbados
+​ Belarus
+​ Belgium
+​ Belize
+​ Benin
+​ Bermuda
+​ Bhutan
+​ Bolivia (Plurinational State of)
+​ Bonaire, Sint Eustatius and Saba
+​ Bosnia and Herzegovina
+​ Botswana
+​ Bouvet Island
+​ Brazil
+​ British Indian Ocean Territory
+​ United States Minor Outlying Islands
+​ Virgin Islands (British)
+​ Virgin Islands (U.S.)
+​ Brunei Darussalam
+​ Bulgaria
+​ Burkina Faso
+​ Burundi
+​ Cambodia
+​ Cameroon
+​ Canada
+​ Cabo Verde
+​ Cayman Islands
+​ Central African Republic
+​ Chad
+​ Chile
+​ China
+​ Christmas Island
+​ Cocos (Keeling) Islands
+​ Colombia
+​ Comoros
+​ Congo
+​ Congo (Democratic Republic of the)
+​ Cook Islands
+​ Costa Rica
+​ Croatia
+​ Cuba
+​ Curaçao
+​ Cyprus
+​ Czech Republic
+​ Denmark
+​ Djibouti
+​ Dominica
+​ Dominican Republic
+​ Ecuador
+​ Egypt
+​ El Salvador
+​ Equatorial Guinea
+​ Eritrea
+​ Estonia
+​ Ethiopia
+​ Falkland Islands (Malvinas)
+​ Faroe Islands
+​ Fiji
+​ Finland
+​ France
+​ French Guiana
+​ French Polynesia
+​ French Southern Territories
+​ Gabon
+​ Gambia
+​ Georgia
+​ Germany
+​ Ghana
+​ Gibraltar
+​ Greece
+​ Greenland
+​ Grenada
+​ Guadeloupe
+​ Guam
+​ Guatemala
+​ Guernsey
+​ Guinea
+​ Guinea-Bissau
+​ Guyana
+​ Haiti
+​ Heard Island and McDonald Islands
+​ Holy See
+​ Honduras
+​ Hong Kong
+​ Hungary
+​ Iceland
+​ India
+​ Indonesia
+​ Côte d'Ivoire
+​ Iran (Islamic Republic of)
+​ Iraq
+​ Ireland
+​ Isle of Man
+​ Israel
+​ Italy
+​ Jamaica
+​ Japan
+​ Jersey
+​ Jordan
+​ Kazakhstan
+​ Kenya
+​ Kiribati
+​ Kuwait
+​ Kyrgyzstan
+​ Lao People's Democratic Republic
+​ Latvia
+​ Lebanon
+​ Lesotho
+​ Liberia
+​ Libya
+​ Liechtenstein
+​ Lithuania
+​ Luxembourg
+​ Macao
+​ Macedonia (the former Yugoslav Republic of)
+​ Madagascar
+​ Malawi
+​ Malaysia
+​ Maldives
+​ Mali
+​ Malta
+​ Marshall Islands
+​ Martinique
+​ Mauritania
+​ Mauritius
+​ Mayotte
+​ Mexico
+​ Micronesia (Federated States of)
+​ Moldova (Republic of)
+​ Monaco
+​ Mongolia
+​ Montenegro
+​ Montserrat
+​ Morocco
+​ Mozambique
+​ Myanmar
+​ Namibia
+​ Nauru
+​ Nepal
+​ Netherlands
+​ New Caledonia
+​ New Zealand
+​ Nicaragua
+​ Niger
+​ Nigeria
+​ Niue
+​ Norfolk Island
+​ Korea (Democratic People's Republic of)
+​ Northern Mariana Islands
+​ Norway
+​ Oman
+​ Pakistan
+​ Palau
+​ Palestine, State of
+​ Panama
+​ Papua New Guinea
+​ Paraguay
+​ Peru
+​ Philippines
+​ Pitcairn
+​ Poland
+​ Portugal
+​ Puerto Rico
+kiran.js:26 Qatar
+kiran.js:26 Republic of Kosovo
+kiran.js:26 Réunion
+kiran.js:26 Romania
+kiran.js:26 Russian Federation
+kiran.js:26 Rwanda
+kiran.js:26 Saint Barthélemy
+kiran.js:26 Saint Helena, Ascension and Tristan da Cunha
+kiran.js:26 Saint Kitts and Nevis
+kiran.js:26 Saint Lucia
+kiran.js:26 Saint Martin (French part)
+kiran.js:26 Saint Pierre and Miquelon
+kiran.js:26 Saint Vincent and the Grenadines
+kiran.js:26 Samoa
+kiran.js:26 San Marino
+kiran.js:26 Sao Tome and Principe
+kiran.js:26 Saudi Arabia
+kiran.js:26 Senegal
+kiran.js:26 Serbia
+kiran.js:26 Seychelles
+kiran.js:26 Sierra Leone
+kiran.js:26 Singapore
+kiran.js:26 Sint Maarten (Dutch part)
+kiran.js:26 Slovakia
+kiran.js:26 Slovenia
+kiran.js:26 Solomon Islands
+kiran.js:26 Somalia
+kiran.js:26 South Africa
+kiran.js:26 South Georgia and the South Sandwich Islands
+kiran.js:26 Korea (Republic of)
+kiran.js:26 South Sudan
+kiran.js:26 Spain
+kiran.js:26 Sri Lanka
+kiran.js:26 Sudan
+kiran.js:26 Suriname
+kiran.js:26 Svalbard and Jan Mayen
+kiran.js:26 Swaziland
+kiran.js:26 Sweden
+kiran.js:26 Switzerland
+kiran.js:26 Syrian Arab Republic
+kiran.js:26 Taiwan
+kiran.js:26 Tajikistan
+kiran.js:26 Tanzania, United Republic of
+kiran.js:26 Thailand
+kiran.js:26 Timor-Leste
+kiran.js:26 Togo
+kiran.js:26 Tokelau
+kiran.js:26 Tonga
+kiran.js:26 Trinidad and Tobago
+kiran.js:26 Tunisia
+kiran.js:26 Turkey
+kiran.js:26 Turkmenistan
+kiran.js:26 Turks and Caicos Islands
+kiran.js:26 Tuvalu
+kiran.js:26 Uganda
+kiran.js:26 Ukraine
+kiran.js:26 United Arab Emirates
+kiran.js:26 United Kingdom of Great Britain and Northern Ireland
+kiran.js:26 United States of America
+kiran.js:26 Uruguay
+kiran.js:26 Uzbekistan
+kiran.js:26 Vanuatu
+kiran.js:26 Venezuela (Bolivarian Republic of)
+kiran.js:26 Viet Nam
+kiran.js:26 Wallis and Futuna
+kiran.js:26 Western Sahara
+kiran.js:26 Yemen
+kiran.js:26 Zambia
+kiran.js:26 Zimbabwe
+
+
+
+(2).  capital of the country
+
+var xhr=new XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.onload=function(){
+      if (xhr.status>=200 && xhr.status<300){
+            let data=JSON.parse(this.response)
+            data.forEach(element => {
+                console.log(element.capital)
+                
+            });
+      }
+}
+xhr.send();
+
+
+
+output
+
+kiran.js:26 Kabul
+kiran.js:26 Mariehamn
+kiran.js:26 Tirana
+kiran.js:26 Algiers
+kiran.js:26 Pago Pago
+kiran.js:26 Andorra la Vella
+kiran.js:26 Luanda
+kiran.js:26 The Valley
+kiran.js:26 
+kiran.js:26 Saint John's
+kiran.js:26 Buenos Aires
+kiran.js:26 Yerevan
+kiran.js:26 Oranjestad
+kiran.js:26 Canberra
+kiran.js:26 Vienna
+kiran.js:26 Baku
+kiran.js:26 Nassau
+kiran.js:26 Manama
+kiran.js:26 Dhaka
+kiran.js:26 Bridgetown
+kiran.js:26 Minsk
+kiran.js:26 Brussels
+kiran.js:26 Belmopan
+kiran.js:26 Porto-Novo
+kiran.js:26 Hamilton
+kiran.js:26 Thimphu
+kiran.js:26 Sucre
+kiran.js:26 Kralendijk
+kiran.js:26 Sarajevo
+kiran.js:26 Gaborone
+kiran.js:26 
+kiran.js:26 Brasília
+kiran.js:26 Diego Garcia
+kiran.js:26 
+kiran.js:26 Road Town
+kiran.js:26 Charlotte Amalie
+kiran.js:26 Bandar Seri Begawan
+kiran.js:26 Sofia
+kiran.js:26 Ouagadougou
+kiran.js:26 Bujumbura
+kiran.js:26 Phnom Penh
+kiran.js:26 Yaoundé
+kiran.js:26 Ottawa
+kiran.js:26 Praia
+kiran.js:26 George Town
+kiran.js:26 Bangui
+kiran.js:26 N'Djamena
+kiran.js:26 Santiago
+kiran.js:26 Beijing
+kiran.js:26 Flying Fish Cove
+kiran.js:26 West Island
+kiran.js:26 Bogotá
+kiran.js:26 Moroni
+kiran.js:26 Brazzaville
+kiran.js:26 Kinshasa
+kiran.js:26 Avarua
+kiran.js:26 San José
+kiran.js:26 Zagreb
+kiran.js:26 Havana
+kiran.js:26 Willemstad
+kiran.js:26 Nicosia
+kiran.js:26 Prague
+kiran.js:26 Copenhagen
+kiran.js:26 Djibouti
+kiran.js:26 Roseau
+kiran.js:26 Santo Domingo
+kiran.js:26 Quito
+kiran.js:26 Cairo
+kiran.js:26 San Salvador
+kiran.js:26 Malabo
+kiran.js:26 Asmara
+kiran.js:26 Tallinn
+kiran.js:26 Addis Ababa
+kiran.js:26 Stanley
+kiran.js:26 Tórshavn
+kiran.js:26 Suva
+kiran.js:26 Helsinki
+kiran.js:26 Paris
+kiran.js:26 Cayenne
+kiran.js:26 Papeetē
+kiran.js:26 Port-aux-Français
+kiran.js:26 Libreville
+kiran.js:26 Banjul
+kiran.js:26 Tbilisi
+kiran.js:26 Berlin
+kiran.js:26 Accra
+kiran.js:26 Gibraltar
+kiran.js:26 Athens
+kiran.js:26 Nuuk
+kiran.js:26 St. George's
+kiran.js:26 Basse-Terre
+kiran.js:26 Hagåtña
+kiran.js:26 Guatemala City
+kiran.js:26 St. Peter Port
+kiran.js:26 Conakry
+kiran.js:26 Bissau
+kiran.js:26 Georgetown
+kiran.js:26 Port-au-Prince
+kiran.js:26 
+kiran.js:26 Rome
+kiran.js:26 Tegucigalpa
+kiran.js:26 City of Victoria
+kiran.js:26 Budapest
+kiran.js:26 Reykjavík
+kiran.js:26 New Delhi
+kiran.js:26 Jakarta
+kiran.js:26 Yamoussoukro
+kiran.js:26 Tehran
+kiran.js:26 Baghdad
+kiran.js:26 Dublin
+kiran.js:26 Douglas
+kiran.js:26 Jerusalem
+kiran.js:26 Rome
+kiran.js:26 Kingston
+kiran.js:26 Tokyo
+kiran.js:26 Saint Helier
+kiran.js:26 Amman
+kiran.js:26 Astana
+kiran.js:26 Nairobi
+kiran.js:26 South Tarawa
+kiran.js:26 Kuwait City
+kiran.js:26 Bishkek
+kiran.js:26 Vientiane
+kiran.js:26 Riga
+kiran.js:26 Beirut
+kiran.js:26 Maseru
+kiran.js:26 Monrovia
+kiran.js:26 Tripoli
+kiran.js:26 Vaduz
+kiran.js:26 Vilnius
+kiran.js:26 Luxembourg
+kiran.js:26 
+kiran.js:26 Skopje
+kiran.js:26 Antananarivo
+kiran.js:26 Lilongwe
+kiran.js:26 Kuala Lumpur
+kiran.js:26 Malé
+kiran.js:26 Bamako
+kiran.js:26 Valletta
+kiran.js:26 Majuro
+kiran.js:26 Fort-de-France
+kiran.js:26 Nouakchott
+kiran.js:26 Port Louis
+kiran.js:26 Mamoudzou
+kiran.js:26 Mexico City
+kiran.js:26 Palikir
+kiran.js:26 Chișinău
+kiran.js:26 Monaco
+kiran.js:26 Ulan Bator
+kiran.js:26 Podgorica
+kiran.js:26 Plymouth
+kiran.js:26 Rabat
+kiran.js:26 Maputo
+kiran.js:26 Naypyidaw
+kiran.js:26 Windhoek
+kiran.js:26 Yaren
+kiran.js:26 Kathmandu
+kiran.js:26 Amsterdam
+kiran.js:26 Nouméa
+kiran.js:26 Wellington
+kiran.js:26 Managua
+kiran.js:26 Niamey
+kiran.js:26 Abuja
+kiran.js:26 Alofi
+kiran.js:26 Kingston
+kiran.js:26 Pyongyang
+kiran.js:26 Saipan
+kiran.js:26 Oslo
+kiran.js:26 Muscat
+kiran.js:26 Islamabad
+kiran.js:26 Ngerulmud
+kiran.js:26 Ramallah
+kiran.js:26 Panama City
+kiran.js:26 Port Moresby
+kiran.js:26 Asunción
+kiran.js:26 Lima
+kiran.js:26 Manila
+kiran.js:26 Adamstown
+kiran.js:26 Warsaw
+kiran.js:26 Lisbon
+kiran.js:26 San Juan
+kiran.js:26 Doha
+kiran.js:26 Pristina
+kiran.js:26 Saint-Denis
+kiran.js:26 Bucharest
+kiran.js:26 Moscow
+kiran.js:26 Kigali
+kiran.js:26 Gustavia
+kiran.js:26 Jamestown
+kiran.js:26 Basseterre
+kiran.js:26 Castries
+kiran.js:26 Marigot
+kiran.js:26 Saint-Pierre
+kiran.js:26 Kingstown
+kiran.js:26 Apia
+kiran.js:26 City of San Marino
+kiran.js:26 São Tomé
+kiran.js:26 Riyadh
+kiran.js:26 Dakar
+kiran.js:26 Belgrade
+kiran.js:26 Victoria
+kiran.js:26 Freetown
+kiran.js:26 Singapore
+kiran.js:26 Philipsburg
+kiran.js:26 Bratislava
+kiran.js:26 Ljubljana
+kiran.js:26 Honiara
+kiran.js:26 Mogadishu
+kiran.js:26 Pretoria
+kiran.js:26 King Edward Point
+kiran.js:26 Seoul
+kiran.js:26 Juba
+kiran.js:26 Madrid
+kiran.js:26 Colombo
+kiran.js:26 Khartoum
+kiran.js:26 Paramaribo
+kiran.js:26 Longyearbyen
+kiran.js:26 Lobamba
+kiran.js:26 Stockholm
+kiran.js:26 Bern
+kiran.js:26 Damascus
+kiran.js:26 Taipei
+kiran.js:26 Dushanbe
+kiran.js:26 Dodoma
+kiran.js:26 Bangkok
+kiran.js:26 Dili
+kiran.js:26 Lomé
+kiran.js:26 Fakaofo
+kiran.js:26 Nuku'alofa
+kiran.js:26 Port of Spain
+kiran.js:26 Tunis
+kiran.js:26 Ankara
+kiran.js:26 Ashgabat
+kiran.js:26 Cockburn Town
+kiran.js:26 Funafuti
+kiran.js:26 Kampala
+kiran.js:26 Kiev
+kiran.js:26 Abu Dhabi
+kiran.js:26 London
+kiran.js:26 Washington, D.C.
+kiran.js:26 Montevideo
+kiran.js:26 Tashkent
+kiran.js:26 Port Vila
+kiran.js:26 Caracas
+kiran.js:26 Hanoi
+kiran.js:26 Mata-Utu
+kiran.js:26 El Aaiún
+kiran.js:26 Sana'a
+kiran.js:26 Lusaka
+kiran.js:26 Harare
+
+
+(3).  flag of the country
+
+
+var xhr=new XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.onload=function(){
+      if (xhr.status>=200 && xhr.status<300){
+            let data=JSON.parse(this.response)
+            data.forEach(element => {
+                console.log(element.flag)
+                
+            });
+      }
+}
+xhr.send();
+
+
+output
+​ https://restcountries.eu/data/afg.svg
+​ https://restcountries.eu/data/ala.svg
+​ https://restcountries.eu/data/alb.svg
+​ https://restcountries.eu/data/dza.svg
+​ https://restcountries.eu/data/asm.svg
+​ https://restcountries.eu/data/and.svg
+​ https://restcountries.eu/data/ago.svg
+​ https://restcountries.eu/data/aia.svg
+​ https://restcountries.eu/data/ata.svg
+​ https://restcountries.eu/data/atg.svg
+​ https://restcountries.eu/data/arg.svg
+​ https://restcountries.eu/data/arm.svg
+​ https://restcountries.eu/data/abw.svg
+​ https://restcountries.eu/data/aus.svg
+​ https://restcountries.eu/data/aut.svg
+​ https://restcountries.eu/data/aze.svg
+​ https://restcountries.eu/data/bhs.svg
+​ https://restcountries.eu/data/bhr.svg
+​ https://restcountries.eu/data/bgd.svg
+​ https://restcountries.eu/data/brb.svg
+​ https://restcountries.eu/data/blr.svg
+​ https://restcountries.eu/data/bel.svg
+​ https://restcountries.eu/data/blz.svg
+​ https://restcountries.eu/data/ben.svg
+​ https://restcountries.eu/data/bmu.svg
+​ https://restcountries.eu/data/btn.svg
+​ https://restcountries.eu/data/bol.svg
+​ https://restcountries.eu/data/bes.svg
+​ https://restcountries.eu/data/bih.svg
+​ https://restcountries.eu/data/bwa.svg
+​ https://restcountries.eu/data/bvt.svg
+​ https://restcountries.eu/data/bra.svg
+​ https://restcountries.eu/data/iot.svg
+​ https://restcountries.eu/data/umi.svg
+​ https://restcountries.eu/data/vgb.svg
+​ https://restcountries.eu/data/vir.svg
+​ https://restcountries.eu/data/brn.svg
+​ https://restcountries.eu/data/bgr.svg
+​ https://restcountries.eu/data/bfa.svg
+​ https://restcountries.eu/data/bdi.svg
+​ https://restcountries.eu/data/khm.svg
+​ https://restcountries.eu/data/cmr.svg
+​ https://restcountries.eu/data/can.svg
+​ https://restcountries.eu/data/cpv.svg
+​ https://restcountries.eu/data/cym.svg
+​ https://restcountries.eu/data/caf.svg
+​ https://restcountries.eu/data/tcd.svg
+​ https://restcountries.eu/data/chl.svg
+​ https://restcountries.eu/data/chn.svg
+​ https://restcountries.eu/data/cxr.svg
+​ https://restcountries.eu/data/cck.svg
+​ https://restcountries.eu/data/col.svg
+​ https://restcountries.eu/data/com.svg
+​ https://restcountries.eu/data/cog.svg
+​ https://restcountries.eu/data/cod.svg
+​ https://restcountries.eu/data/cok.svg
+​ https://restcountries.eu/data/cri.svg
+​ https://restcountries.eu/data/hrv.svg
+​ https://restcountries.eu/data/cub.svg
+​ https://restcountries.eu/data/cuw.svg
+​ https://restcountries.eu/data/cyp.svg
+​ https://restcountries.eu/data/cze.svg
+​ https://restcountries.eu/data/dnk.svg
+​ https://restcountries.eu/data/dji.svg
+​ https://restcountries.eu/data/dma.svg
+​ https://restcountries.eu/data/dom.svg
+​ https://restcountries.eu/data/ecu.svg
+​ https://restcountries.eu/data/egy.svg
+​ https://restcountries.eu/data/slv.svg
+​ https://restcountries.eu/data/gnq.svg
+​ https://restcountries.eu/data/eri.svg
+​ https://restcountries.eu/data/est.svg
+​ https://restcountries.eu/data/eth.svg
+​ https://restcountries.eu/data/flk.svg
+​ https://restcountries.eu/data/fro.svg
+​ https://restcountries.eu/data/fji.svg
+​ https://restcountries.eu/data/fin.svg
+​ https://restcountries.eu/data/fra.svg
+​ https://restcountries.eu/data/guf.svg
+​ https://restcountries.eu/data/pyf.svg
+​ https://restcountries.eu/data/atf.svg
+​ https://restcountries.eu/data/gab.svg
+​ https://restcountries.eu/data/gmb.svg
+​ https://restcountries.eu/data/geo.svg
+​ https://restcountries.eu/data/deu.svg
+​ https://restcountries.eu/data/gha.svg
+​ https://restcountries.eu/data/gib.svg
+​ https://restcountries.eu/data/grc.svg
+​ https://restcountries.eu/data/grl.svg
+​ https://restcountries.eu/data/grd.svg
+​ https://restcountries.eu/data/glp.svg
+​ https://restcountries.eu/data/gum.svg
+​ https://restcountries.eu/data/gtm.svg
+​ https://restcountries.eu/data/ggy.svg
+​ https://restcountries.eu/data/gin.svg
+​ https://restcountries.eu/data/gnb.svg
+​ https://restcountries.eu/data/guy.svg
+​ https://restcountries.eu/data/hti.svg
+​ https://restcountries.eu/data/hmd.svg
+​ https://restcountries.eu/data/vat.svg
+​ https://restcountries.eu/data/hnd.svg
+​ https://restcountries.eu/data/hkg.svg
+​ https://restcountries.eu/data/hun.svg
+​ https://restcountries.eu/data/isl.svg
+​ https://restcountries.eu/data/ind.svg
+​ https://restcountries.eu/data/idn.svg
+​ https://restcountries.eu/data/civ.svg
+​ https://restcountries.eu/data/irn.svg
+​ https://restcountries.eu/data/irq.svg
+​ https://restcountries.eu/data/irl.svg
+​ https://restcountries.eu/data/imn.svg
+​ https://restcountries.eu/data/isr.svg
+​ https://restcountries.eu/data/ita.svg
+​ https://restcountries.eu/data/jam.svg
+​ https://restcountries.eu/data/jpn.svg
+​ https://restcountries.eu/data/jey.svg
+​ https://restcountries.eu/data/jor.svg
+​ https://restcountries.eu/data/kaz.svg
+​ https://restcountries.eu/data/ken.svg
+​ https://restcountries.eu/data/kir.svg
+​ https://restcountries.eu/data/kwt.svg
+​ https://restcountries.eu/data/kgz.svg
+​ https://restcountries.eu/data/lao.svg
+​ https://restcountries.eu/data/lva.svg
+​ https://restcountries.eu/data/lbn.svg
+​ https://restcountries.eu/data/lso.svg
+​ https://restcountries.eu/data/lbr.svg
+​ https://restcountries.eu/data/lby.svg
+​ https://restcountries.eu/data/lie.svg
+​ https://restcountries.eu/data/ltu.svg
+​ https://restcountries.eu/data/lux.svg
+​ https://restcountries.eu/data/mac.svg
+​ https://restcountries.eu/data/mkd.svg
+​ https://restcountries.eu/data/mdg.svg
+​ https://restcountries.eu/data/mwi.svg
+​ https://restcountries.eu/data/mys.svg
+​ https://restcountries.eu/data/mdv.svg
+​ https://restcountries.eu/data/mli.svg
+​ https://restcountries.eu/data/mlt.svg
+​ https://restcountries.eu/data/mhl.svg
+​ https://restcountries.eu/data/mtq.svg
+​ https://restcountries.eu/data/mrt.svg
+​ https://restcountries.eu/data/mus.svg
+​ https://restcountries.eu/data/myt.svg
+​ https://restcountries.eu/data/mex.svg
+​ https://restcountries.eu/data/fsm.svg
+​ https://restcountries.eu/data/mda.svg
+​ https://restcountries.eu/data/mco.svg
+​ https://restcountries.eu/data/mng.svg
+​ https://restcountries.eu/data/mne.svg
+​ https://restcountries.eu/data/msr.svg
+​ https://restcountries.eu/data/mar.svg
+​ https://restcountries.eu/data/moz.svg
+​ https://restcountries.eu/data/mmr.svg
+​ https://restcountries.eu/data/nam.svg
+​ https://restcountries.eu/data/nru.svg
+​ https://restcountries.eu/data/npl.svg
+​ https://restcountries.eu/data/nld.svg
+​ https://restcountries.eu/data/ncl.svg
+​ https://restcountries.eu/data/nzl.svg
+​ https://restcountries.eu/data/nic.svg
+​ https://restcountries.eu/data/ner.svg
+​ https://restcountries.eu/data/nga.svg
+​ https://restcountries.eu/data/niu.svg
+​ https://restcountries.eu/data/nfk.svg
+​ https://restcountries.eu/data/prk.svg
+​ https://restcountries.eu/data/mnp.svg
+​ https://restcountries.eu/data/nor.svg
+​ https://restcountries.eu/data/omn.svg
+​ https://restcountries.eu/data/pak.svg
+​ https://restcountries.eu/data/plw.svg
+​ https://restcountries.eu/data/pse.svg
+​ https://restcountries.eu/data/pan.svg
+​ https://restcountries.eu/data/png.svg
+​ https://restcountries.eu/data/pry.svg
+​ https://restcountries.eu/data/per.svg
+​ https://restcountries.eu/data/phl.svg
+​ https://restcountries.eu/data/pcn.svg
+​ https://restcountries.eu/data/pol.svg
+​ https://restcountries.eu/data/prt.svg
+​ https://restcountries.eu/data/pri.svg
+kiran.js:26 https://restcountries.eu/data/qat.svg
+kiran.js:26 https://restcountries.eu/data/kos.svg
+kiran.js:26 https://restcountries.eu/data/reu.svg
+kiran.js:26 https://restcountries.eu/data/rou.svg
+kiran.js:26 https://restcountries.eu/data/rus.svg
+kiran.js:26 https://restcountries.eu/data/rwa.svg
+kiran.js:26 https://restcountries.eu/data/blm.svg
+kiran.js:26 https://restcountries.eu/data/shn.svg
+kiran.js:26 https://restcountries.eu/data/kna.svg
+kiran.js:26 https://restcountries.eu/data/lca.svg
+kiran.js:26 https://restcountries.eu/data/maf.svg
+kiran.js:26 https://restcountries.eu/data/spm.svg
+kiran.js:26 https://restcountries.eu/data/vct.svg
+kiran.js:26 https://restcountries.eu/data/wsm.svg
+kiran.js:26 https://restcountries.eu/data/smr.svg
+kiran.js:26 https://restcountries.eu/data/stp.svg
+kiran.js:26 https://restcountries.eu/data/sau.svg
+kiran.js:26 https://restcountries.eu/data/sen.svg
+kiran.js:26 https://restcountries.eu/data/srb.svg
+kiran.js:26 https://restcountries.eu/data/syc.svg
+kiran.js:26 https://restcountries.eu/data/sle.svg
+kiran.js:26 https://restcountries.eu/data/sgp.svg
+kiran.js:26 https://restcountries.eu/data/sxm.svg
+kiran.js:26 https://restcountries.eu/data/svk.svg
+kiran.js:26 https://restcountries.eu/data/svn.svg
+kiran.js:26 https://restcountries.eu/data/slb.svg
+kiran.js:26 https://restcountries.eu/data/som.svg
+kiran.js:26 https://restcountries.eu/data/zaf.svg
+kiran.js:26 https://restcountries.eu/data/sgs.svg
+kiran.js:26 https://restcountries.eu/data/kor.svg
+kiran.js:26 https://restcountries.eu/data/ssd.svg
+kiran.js:26 https://restcountries.eu/data/esp.svg
+kiran.js:26 https://restcountries.eu/data/lka.svg
+kiran.js:26 https://restcountries.eu/data/sdn.svg
+kiran.js:26 https://restcountries.eu/data/sur.svg
+kiran.js:26 https://restcountries.eu/data/sjm.svg
+kiran.js:26 https://restcountries.eu/data/swz.svg
+kiran.js:26 https://restcountries.eu/data/swe.svg
+kiran.js:26 https://restcountries.eu/data/che.svg
+kiran.js:26 https://restcountries.eu/data/syr.svg
+kiran.js:26 https://restcountries.eu/data/twn.svg
+kiran.js:26 https://restcountries.eu/data/tjk.svg
+kiran.js:26 https://restcountries.eu/data/tza.svg
+kiran.js:26 https://restcountries.eu/data/tha.svg
+kiran.js:26 https://restcountries.eu/data/tls.svg
+kiran.js:26 https://restcountries.eu/data/tgo.svg
+kiran.js:26 https://restcountries.eu/data/tkl.svg
+kiran.js:26 https://restcountries.eu/data/ton.svg
+kiran.js:26 https://restcountries.eu/data/tto.svg
+kiran.js:26 https://restcountries.eu/data/tun.svg
+kiran.js:26 https://restcountries.eu/data/tur.svg
+kiran.js:26 https://restcountries.eu/data/tkm.svg
+kiran.js:26 https://restcountries.eu/data/tca.svg
+kiran.js:26 https://restcountries.eu/data/tuv.svg
+kiran.js:26 https://restcountries.eu/data/uga.svg
+kiran.js:26 https://restcountries.eu/data/ukr.svg
+kiran.js:26 https://restcountries.eu/data/are.svg
+kiran.js:26 https://restcountries.eu/data/gbr.svg
+kiran.js:26 https://restcountries.eu/data/usa.svg
+kiran.js:26 https://restcountries.eu/data/ury.svg
+kiran.js:26 https://restcountries.eu/data/uzb.svg
+kiran.js:26 https://restcountries.eu/data/vut.svg
+kiran.js:26 https://restcountries.eu/data/ven.svg
+kiran.js:26 https://restcountries.eu/data/vnm.svg
+kiran.js:26 https://restcountries.eu/data/wlf.svg
+kiran.js:26 https://restcountries.eu/data/esh.svg
+kiran.js:26 https://restcountries.eu/data/yem.svg
+kiran.js:26 https://restcountries.eu/data/zmb.svg
+kiran.js:26 https://restcountries.eu/data/zwe.svg
+
+
+
+(d).  Print the total population of countries using reduce function
+
+
+var xhr=new XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.onload=function(){
+      if (xhr.status>=200 && xhr.status<300){
+            let data=JSON.parse(this.response)
+                let totalpop = data.reduce((acc,cur) => {
+                  return acc+cur.population
+            },0)
+            console.log(totalpop)
+      }
+}
+xhr.send();
+
+
+output
+7349137231
+
+
+
+(e).  Print the country which uses US Dollars as currency.
+
+
+var xhr=new XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.onload=function(){
+      if (xhr.status>=200 && xhr.status<300){
+            let data=JSON.parse(this.response)
+            for (let i of data){
+                  let user=i
+                  for(let i=0;i<user.currencies.length;i++){
+                     if(user.currencies[i].code == 'USD'){
+                              console.log(user.name)
+                     }
+                  }
+            }
+      }
+}
+xhr.send();
+
+
+output
+
+kiran.js:29 American Samoa
+kiran.js:29 Bonaire, Sint Eustatius and Saba
+kiran.js:29 British Indian Ocean Territory
+kiran.js:29 United States Minor Outlying Islands
+kiran.js:29 Virgin Islands (British)
+kiran.js:29 Virgin Islands (U.S.)
+kiran.js:29 Cambodia
+kiran.js:29 Ecuador
+kiran.js:29 El Salvador
+kiran.js:29 Guam
+kiran.js:29 Marshall Islands
+kiran.js:29 Micronesia (Federated States of)
+kiran.js:29 Northern Mariana Islands
+kiran.js:29 Palau
+kiran.js:29 Panama
+kiran.js:29 Puerto Rico
+kiran.js:29 Timor-Leste
+kiran.js:29 Turks and Caicos Islands
+kiran.js:29 United States of America
+kiran.js:29 Zimbabwe
